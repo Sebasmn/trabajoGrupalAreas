@@ -15,7 +15,12 @@ class MiComponente extends Component{
                 <ol>
                     {
                         receta.ingredientes.map((ingredientes, i) => {
-                                                                
+                            console.log(ingredientes);
+                            return (
+                                <li key={i}>
+                                    {ingredientes}
+                                </li>
+                            )
                         })
                     }
                 </ol>
@@ -25,5 +30,4 @@ class MiComponente extends Component{
     }
 
 }
-
 export default MiComponente;
