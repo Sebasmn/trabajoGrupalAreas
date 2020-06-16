@@ -3,12 +3,24 @@ import React, {Component} from 'react';
 class MiComponente extends Component{
 
     render(){
+        let receta = {
+            nombre: 'Pizza',
+            ingredientes: ['Tomate', 'Queso', 'Jamon cocido'],
+            calorias: 400
+        };
         return (
-            <React.Fragment>
-                <h1>Hola, soy un componente</h1>
-                <h2>Estoy probando el componente</h2>
+            <div className="mi-componente">
+                <h1>{'Receta: ' + receta.nombre}</h1>
+                <h2>{'Calorias: ' + receta.calorias}</h2>
+                <ol>
+                    {
+                        receta.ingredientes.map((ingredientes, i) => {
+                                                                
+                        })
+                    }
+                </ol>
                 <hr/>
-            </React.Fragment>
+            </div>
         );
     }
 
