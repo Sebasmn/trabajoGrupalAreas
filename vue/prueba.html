@@ -40,18 +40,43 @@
     <div id="app2">
         
         <div id="app3">
-            <p>{{mensaje}}</p>
+            <p id="mostr">{{mensaje}}</p>
 
         </div>
         <br>
-        <div v-if="picked == 'cuadrado'" id="app3">
+        <div v-if="picked == 'cuadrado' " id="app3">
             
-         <label>LADO : <input type="number" id="numero1" name="numero1" /></label>
-        <br><br><button id= "boton1">Calcular</button>
+         <label id="lado">LADO : <input type="number" v-model="numero1" /></label>
+        <br><br><button id= "boton1 " v-on:click="funcionCalcular">Calcular</button><br><br>
+        <label>El area es : {{mensaje2}}</label><br>
+        <label>El perimetro es : {{mensaje6}}</label>
+        <br><br><button id= "boton2" v-on:click="funcionLimpiar">Nuevo</button><br><br>
         </div>
-        <div v-if="picked == 'rectangulo'" id="app3"><p></p></div>
-        <div v-if="picked == 'circulo'" id="app3"> </div>
-        <div v-if="picked == 'triangulo'" id="app3"></div>
+
+        <div v-if="picked == 'rectangulo'" id="app3"><p></p>
+            <label id="lado">LADO1 : <input type="number" v-model="numero2" /></label><br><br>
+            <label id="lado">LADO2 : <input type="number" v-model="numero3" /></label>
+        <br><br><button id= "boton1 " v-on:click="funcionCalcular">Calcular</button><br><br>
+        <label>El area es : {{mensaje3}}</label><br>
+        <label>El perimetro es : {{mensaje7}}</label>
+        <br><br><button id= "boton2" v-on:click="funcionLimpiar">Nuevo</button><br><br>
+        </div>
+        <div v-if="picked == 'circulo'" id="app3"> 
+            <label id="lado">RADIO : <input type="number" v-model="numero4" /></label>
+        <br><br><button id= "boton1 " v-on:click="funcionCalcular">Calcular</button><br><br>
+        <label>El area es : {{mensaje4}}</label> <br>
+        <label>El perimetro es : {{mensaje8}}</label>
+        <br><br><button id= "boton2" v-on:click="funcionLimpiar">Nuevo</button><br><br>
+        </div>
+        <div v-if="picked == 'triangulo'" id="app3">
+            <label id="lado">LADO1 : <input type="number" v-model="numero5" /></label><br><br>
+            <label id="lado">LADO2 : <input type="number" v-model="numero6" /></label><br><br>
+            <label id="lado">LADO3 : <input type="number" v-model="numero7" /></label>
+            <br><br><button id= "boton1 " v-on:click="funcionCalcular">Calcular</button><br><br>
+        <label>El area es : {{mensaje5}}</label> <br>
+        <label>El perimetro es : {{mensaje9}}</label>
+        <br><br><button id= "boton2" v-on:click="funcionLimpiar">Nuevo</button><br><br>
+        </div>
     </div>
     <script>
         var app1= new Vue({
@@ -59,15 +84,72 @@
             data: {
                 picked: '',
                 mensaje: 'RESULTADOS',
+                mensaje2: '',
+                mensaje3: '',
+                mensaje4: '',
+                mensaje5: '',
+                mensaje6:'',
+                mensaje7:'',
+                mensaje8:'',
+                mensaje9:'',
+                numero1:'',
+                numero2:'',
+                numero3:'',
+                numero4:'',
+                numero5:'',
+                numero6:'',
+                numero7:'',
+                
             },
             methods:{
-                CambiarMensaje: function(){
-                    if(this.picked ='triangulo'){
-                        this.mensaje = 'TRIANGULO';
+                funcionCalcular: function(){
+                    if(this.picked=='triangulo'){
+                        this.mensaje9 = parseInt( this.numero5)+parseInt( this.numero6)+parseInt( this.numero7);
+                        if(this.numero5==this.numero6 && this.numero7==this.numero6){
+                            this.mensaje5 = (Math.sqrt(3)/4)*Math.pow(this.numero5,2);
+                        }if(this.numero5!=this.numero6 && this.numero7!=this.numero6 &&this.numero7!=this.numero5){
+                            s=this.mensaje9/2;
+                            this.mensaje5=Math.sqrt(((s-this.numero5)*(s-this.numero6)*(s-this.numero7))*s);
+                        }else{
+                                if(this.numero5==this.numero6){
+                                    this.mensaje5=(this.numero7*Math.sqrt(Math.pow(this.numero5,2)-(Math.pow(this.numero7,2))/4))/2;
+                                }else if(this.numero6==this.numero7){
+                                    this.mensaje5=(this.numero5*Math.sqrt(Math.pow(this.numero6,2)-(Math.pow(this.numero5,2))/4))/2;
+                                }else if(this.numero5==this.numero7){
+                                    this.mensaje5=(this.numero6*Math.sqrt(Math.pow(this.numero5,2)-(Math.pow(this.numero6,2))/4))/2;
+                                }
+                        }
+                        
+                    }else if(this.picked=='cuadrado'){
+                        this.mensaje2 = Math.pow(this.numero1,2);
+                        this.mensaje6=this.numero1*4;
+                    }else if(this.picked=='rectangulo'){
+                        this.mensaje3 = this.numero3*this.numero2;
+                        this.mensaje7= 2*this.numero3+2*this.numero2;
+                    }else if(this.picked=='circulo'){
+                        this.mensaje4 = Math.PI* Math.pow(this.numero4,2);
+                        this.mensaje8 = Math.PI* 2*this.numero4;
                     }
-
-                }
+                },
+                funcionLimpiar: function(){
+                        this.mensaje3 = '';
+                        this.mensaje2 = '';
+                        this.mensaje6 = '';
+                        this.numero1='';
+                        this.mensaje4 = '';
+                        this.mensaje5 = '';
+                        this.numero2 = '';
+                        this.numero3='';
+                        this.mensaje7 = '';
+                        this.mensaje8 = '';
+                        this.numero4='';
+                        this.numero5='';
+                        this.numero6='';
+                        this.numero7='';
+                    
+                },
             }
+            
         })
     </script>
     </div>
