@@ -11,24 +11,16 @@
     <script src="js/calculos.js"></script>
     <div class="menu">
         <div style="float: left;;">
-            <button onclick="$('#dos').hide();$('#tres').hide();$('#cuatro').hide();$('#uno').show();
-            $('#areaC').hide();$('#perimC').hide();$('#areaT').hide();$('#perimT').hide();
-            ;$('#areaCi').hide();$('#perimCi').hide();$('#areaR').hide();$('#perimR').hide();" class="botonimagentri"></button>
+            <button onclick="botonTriangulo();" class="botonimagentri"></button>
         </div>
         <div style="float: left;">
-            <button onclick="$('#uno').hide();$('#tres').hide();$('#cuatro').hide();$('#dos').show();
-            ;$('#areaC').hide();$('#perimC').hide();$('#areaT').hide();$('#perimT').hide();
-            ;$('#areaCi').hide();$('#perimCi').hide();$('#areaR').hide();$('#perimR').hide();" class="botonimagencua"></button>
+            <button onclick="botonCuadrado();" class="botonimagencua"></button>
         </div>
         <div  style="float: left;">
-            <button onclick="$('#uno').hide();$('#dos').hide();$('#cuatro').hide();$('#tres').show();
-            ;$('#areaC').hide();$('#perimC').hide();$('#areaT').hide();$('#perimT').hide();
-            ;$('#areaCi').hide();$('#perimCi').hide();$('#areaR').hide();$('#perimR').hide();" class="botonimagencir"></button>
+            <button onclick="botonCirculo();" class="botonimagencir"></button>
         </div>
         <div style="float: left;">
-            <button onclick="$('#uno').hide();$('#dos').hide();$('#tres').hide();$('#cuatro').show();
-            ;$('#areaC').hide();$('#perimC').hide();$('#areaT').hide();$('#perimT').hide();
-            ;$('#areaCi').hide();$('#perimCi').hide();$('#areaR').hide();$('#perimR').hide();" class="botonimagenrec"></button>
+            <button onclick="botonRectangulo();" class="botonimagenrec"></button>
         </div>
     </div>
     <br><br>
@@ -38,12 +30,12 @@
                 <div class="ap">
                     <label>Lado: <input type="number" id="ladoTriangulo"></label>
                     <br><br>
-                    <button onclick="$('#areaT').show();$('#perimT').show();areaPerimTri();" style="float: right;">Calcular</button>
-                    <div id="areaT" style="display: none;justify-content: right;">
-                        <label>Área: <input type="number" id="areaT" readonly="readonly"></label>
+                    <button onclick="areaPerimTri();" style="float: right;">Calcular</button>
+                    <div id="areaTrian" style="display: none;">
+                        <label>Área: <input type="text" id="areaT" readonly="readonly"></label>
                     </div>
                     <div id="perimT" style="display: none;">
-                        <label>Perímetro: <input type="number" id="perimetroT" readonly="readonly"></label>
+                        <label>Perímetro: <input type="text" id="perimetroT" readonly="readonly"></label>
                     </div>
                 </div>
             </div>
@@ -53,12 +45,12 @@
                 <div class="ap">
                     <label>Lado: <input type="number" id="ladoCuadrado"></label>
                     <br><br>
-                    <button onclick="$('#areaC').show();$('#perimC').show();" style="float: right;">Calcular</button>
-                    <div id="areaC" style="display: none;justify-content: right;">
-                        <label>Área: <input type="number" id="areaC" readonly="readonly"></label>
+                    <button onclick="areaPerimCua()" style="float: right;">Calcular</button>
+                    <div id="areaCuad" style="display: none;">
+                        <label>Área: <input type="text" id="areaC" readonly="readonly"></label>
                     </div>
                     <div id="perimC" style="display: none;">
-                        <label>Perímetro: <input type="number" id="perimetroC" readonly="readonly"></label>
+                        <label>Perímetro: <input type="text" id="perimetroC" readonly="readonly"></label>
                     </div>
                 </div>
             </div>
@@ -68,12 +60,12 @@
                     <div class="ap">
                         <label>Radio: <input type="number" id="radioCirculo"></label>
                         <br><br>
-                        <button onclick="$('#areaCi').show();$('#perimCi').show();" style="float: right;">Calcular</button>
-                        <div id="areaCi" style="display: none;justify-content: right;">
-                            <label>Área: <input type="number" id="areaCi" readonly="readonly"></label>
+                        <button onclick="areaPerimCir()" style="float: right;">Calcular</button>
+                        <div id="areaCircu" style="display: none;">
+                            <label>Área: <input type="text" id="areaCi" readonly="readonly"></label>
                         </div>
                         <div id="perimCi" style="display: none;">
-                            <label>Longitud: <input type="number" id="perimetroCi" readonly="readonly"></label>
+                            <label>Longitud: <input type="text" id="perimetroCi" readonly="readonly"></label>
                         </div>
                     </div>
             </div>
@@ -84,12 +76,12 @@
                     <label>Base: <input type="number" id="base"></label>
                     <label>Altura: <input type="number" id="altura"></label>
                     <br><br>
-                    <button onclick="$('#areaR').show();$('#perimR').show();" style="float: right;">Calcular</button>
-                    <div id="areaR" style="display: none;justify-content: right;">
-                        <label>Área: <input type="number" id="areaR" readonly="readonly"></label>
+                    <button onclick="areaPerimRec()" style="float: right;">Calcular</button>
+                    <div id="areaRect" style="display: none;">
+                        <label>Área: <input type="text" id="areaR" readonly="readonly"></label>
                     </div>
                     <div id="perimR" style="display: none;">
-                        <label>Perímetro: <input type="number" id="perimetroR" readonly="readonly"></label>
+                        <label>Perímetro: <input type="text" id="perimetroR" readonly="readonly"></label>
                     </div>
                 </div>
             </div>  
