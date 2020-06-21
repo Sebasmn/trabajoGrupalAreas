@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 //Importar componentes
-import MiComponente from './components/MiComponente';
+import TextBoxOculto from './components/TextBoxOculto';
 
 function holaMundo (nombre, edad) {
   var presentacion  = (
@@ -24,11 +24,8 @@ function App() {
         <p>
           Hola bienvenido a nuestra aplicación creada con react
         </p>
-        {holaMundo(nombre,21)}
         <section className="componentes">
-
-          <MiComponente/>
-
+          <TextBoxOculto/>
         </section>
       </header>
      
