@@ -8,6 +8,7 @@
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/calculos.js"></script>
     <div class="menu">
         <div style="float: left;;">
             <button onclick="$('#dos').hide();$('#tres').hide();$('#cuatro').hide();$('#uno').show();
@@ -37,7 +38,7 @@
                 <div class="ap">
                     <label>Lado: <input type="number" id="ladoTriangulo"></label>
                     <br><br>
-                    <button onclick="$('#areaT').show();$('#perimT').show();" style="float: right;">Calcular</button>
+                    <button onclick="$('#areaT').show();$('#perimT').show();areaPerimTri();" style="float: right;">Calcular</button>
                     <div id="areaT" style="display: none;justify-content: right;">
                         <label>Área: <input type="number" id="areaT" readonly="readonly"></label>
                     </div>
@@ -72,7 +73,7 @@
                             <label>Área: <input type="number" id="areaCi" readonly="readonly"></label>
                         </div>
                         <div id="perimCi" style="display: none;">
-                            <label>Perímetro: <input type="number" id="perimetroCi" readonly="readonly"></label>
+                            <label>Longitud: <input type="number" id="perimetroCi" readonly="readonly"></label>
                         </div>
                     </div>
             </div>
@@ -80,8 +81,8 @@
         <div id="cuatro" style="width:200px;height:200px;display:none">
             <div class="operacion">
                 <div class="ap">
-                    <label>Base: <input type="number" id="ladoRectangulo"></label>
-                    <label>Altura: <input type="number" id="ladoRectangulo"></label>
+                    <label>Base: <input type="number" id="base"></label>
+                    <label>Altura: <input type="number" id="altura"></label>
                     <br><br>
                     <button onclick="$('#areaR').show();$('#perimR').show();" style="float: right;">Calcular</button>
                     <div id="areaR" style="display: none;justify-content: right;">
