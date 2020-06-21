@@ -9,6 +9,9 @@
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/calculos.js"></script>
+    <div class="header">
+        <h1>ÁREA Y PERÍMETRO</h1>
+    </div>
     <div class="menu">
         <div style="float: left;;">
             <button onclick="botonTriangulo();" class="botonimagentri"></button>
@@ -28,7 +31,7 @@
         <div id="uno" style="width:200px;height:200px;display:none">
             <div class="operacion">
                 <div class="ap">
-                    <label>Lado: <input type="number" id="ladoTriangulo"></label>
+                    <label>Lado T: <input type="number" id="ladoTriangulo"></label>
                     <br><br>
                     <button onclick="areaPerimTri();" style="float: right;">Calcular</button>
                     <div id="areaTrian" style="display: none;">
@@ -43,7 +46,7 @@
         <div id="dos" style="width:200px;height:200px;display:none">
             <div class="operacion">
                 <div class="ap">
-                    <label>Lado: <input type="number" id="ladoCuadrado"></label>
+                    <label>Lado C: <input type="number" id="ladoCuadrado"></label>
                     <br><br>
                     <button onclick="areaPerimCua()" style="float: right;">Calcular</button>
                     <div id="areaCuad" style="display: none;">
