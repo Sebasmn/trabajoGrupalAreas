@@ -4,21 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="estilos/styles.css">
 </head>
 <body>
-    <div class="padre" style="display: flex;justify-content: center;">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div class="menu">
         <div style="float: left;;">
-            <input type="button"class="botonimagentri">
+            <button onclick="$('#dos').hide();$('#tres').hide();$('#cuatro').hide();$('#uno').show();
+            $('#areaC').hide();$('#perimC').hide();$('#areaT').hide();$('#perimT').hide();
+            ;$('#areaCi').hide();$('#perimCi').hide();$('#areaR').hide();$('#perimR').hide();" class="botonimagentri"></button>
         </div>
         <div style="float: left;">
-            <button class="botonimagencua">Cuadrado</button>
+            <button onclick="$('#uno').hide();$('#tres').hide();$('#cuatro').hide();$('#dos').show();
+            ;$('#areaC').hide();$('#perimC').hide();$('#areaT').hide();$('#perimT').hide();
+            ;$('#areaCi').hide();$('#perimCi').hide();$('#areaR').hide();$('#perimR').hide();" class="botonimagencua"></button>
         </div>
         <div  style="float: left;">
-            <button class="botonimagencir">Círculo</button>
+            <button onclick="$('#uno').hide();$('#dos').hide();$('#cuatro').hide();$('#tres').show();
+            ;$('#areaC').hide();$('#perimC').hide();$('#areaT').hide();$('#perimT').hide();
+            ;$('#areaCi').hide();$('#perimCi').hide();$('#areaR').hide();$('#perimR').hide();" class="botonimagencir"></button>
         </div>
         <div style="float: left;">
-            <button class="botonimagenrec">Rectangulo</button>
+            <button onclick="$('#uno').hide();$('#dos').hide();$('#tres').hide();$('#cuatro').show();
+            ;$('#areaC').hide();$('#perimC').hide();$('#areaT').hide();$('#perimT').hide();
+            ;$('#areaCi').hide();$('#perimCi').hide();$('#areaR').hide();$('#perimR').hide();" class="botonimagenrec"></button>
+        </div>
+    </div>
+    <br><br>
+    <div class="caja">
+        <div id="uno" style="width:200px;height:200px;display:none">
+            <div class="operacion">
+                <div class="ap">
+                    <label>Lado: <input type="number" id="ladoTriangulo"></label>
+                    <br><br>
+                    <button onclick="$('#areaT').show();$('#perimT').show();" style="float: right;">Calcular</button>
+                    <div id="areaT" style="display: none;justify-content: right;">
+                        <label>Área: <input type="number" id="areaT" readonly="readonly"></label>
+                    </div>
+                    <div id="perimT" style="display: none;">
+                        <label>Perímetro: <input type="number" id="perimetroT" readonly="readonly"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="dos" style="width:200px;height:200px;display:none">
+            <div class="operacion">
+                <div class="ap">
+                    <label>Lado: <input type="number" id="ladoCuadrado"></label>
+                    <br><br>
+                    <button onclick="$('#areaC').show();$('#perimC').show();" style="float: right;">Calcular</button>
+                    <div id="areaC" style="display: none;justify-content: right;">
+                        <label>Área: <input type="number" id="areaC" readonly="readonly"></label>
+                    </div>
+                    <div id="perimC" style="display: none;">
+                        <label>Perímetro: <input type="number" id="perimetroC" readonly="readonly"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tres" style="width:200px;height:200px;display:none">
+            <div class="operacion">
+                    <div class="ap">
+                        <label>Radio: <input type="number" id="radioCirculo"></label>
+                        <br><br>
+                        <button onclick="$('#areaCi').show();$('#perimCi').show();" style="float: right;">Calcular</button>
+                        <div id="areaCi" style="display: none;justify-content: right;">
+                            <label>Área: <input type="number" id="areaCi" readonly="readonly"></label>
+                        </div>
+                        <div id="perimCi" style="display: none;">
+                            <label>Perímetro: <input type="number" id="perimetroCi" readonly="readonly"></label>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div id="cuatro" style="width:200px;height:200px;display:none">
+            <div class="operacion">
+                <div class="ap">
+                    <label>Base: <input type="number" id="ladoRectangulo"></label>
+                    <label>Altura: <input type="number" id="ladoRectangulo"></label>
+                    <br><br>
+                    <button onclick="$('#areaR').show();$('#perimR').show();" style="float: right;">Calcular</button>
+                    <div id="areaR" style="display: none;justify-content: right;">
+                        <label>Área: <input type="number" id="areaR" readonly="readonly"></label>
+                    </div>
+                    <div id="perimR" style="display: none;">
+                        <label>Perímetro: <input type="number" id="perimetroR" readonly="readonly"></label>
+                    </div>
+                </div>
+            </div>  
         </div>
     </div>
 </body>

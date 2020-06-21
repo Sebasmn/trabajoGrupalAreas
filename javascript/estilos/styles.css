@@ -1,7 +1,60 @@
   .botonimagentri{
     background-repeat:no-repeat;
-    height:100px;
-    width:100px;
+    height:250px;
+    width:250px;
     background-position:center;
-    background-image: url('im');
+    background-image: url("/javascript/imagenes/triangulo.jpg");
+    box-shadow: 10px 7px 1px #999;
+  }
+  .botonimagencir{
+    background-repeat:no-repeat;
+    height:250px;
+    width:250px;
+    background-position:center;
+    background-image: url("/javascript/imagenes/circulo.png");
+    box-shadow: 10px 7px 1px #999;
+  }
+  .botonimagencua{
+    background-repeat:no-repeat;
+    height:250px;
+    width:250px;
+    background-position:center;
+    background-image: url("/javascript/imagenes/cuadrado.jpg");
+    box-shadow: 10px 7px 1px #999;
+  }
+  .botonimagenrec{
+    background-repeat:no-repeat;
+    height:250px;
+    width:250px;
+    background-position:center;
+    background-image: url("/javascript/imagenes/rectangulo.jpg");
+    box-shadow: 10px 7px 1px #999;
+  }
+  .operacion{
+    height:270px;
+    width:265px;
+    background-position:center;
+    border: solid;
+    box-shadow: 10px 7px 1px #999;
+    justify-content: center;
+  }
+  .menu{
+    float:left;
+    width: 95%;
+    display: flex;
+   justify-content: center;
+   margin: 30px;
+  }
+  .caja{
+    width: 95%;
+    justify-content: center;
+    display: flex;
+  }
+  .ap{
+    float: center;
+    margin: 50px;
+    justify-content: center;
+    text-align: left;
+    height: 300px;
+    width: 100px;
   }
